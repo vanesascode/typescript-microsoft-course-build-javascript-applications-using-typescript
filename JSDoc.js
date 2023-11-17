@@ -3,12 +3,12 @@
 /**
  * @type {string}
  */
-const hello = 345345;
+const hello = 345345; // Type 'number' is not assignable to type 'string'.ts(2322)
 
 /**
  * @type {Array<string|number>}
  */
-const friends = [[1, 2], "tom"];
+const friends = [[1, 2], "tom"]; // Type '[number, number]' is not assignable to type 'string | number'.ts(2322)
 
 /**
  * @typedef {Object} user
@@ -22,7 +22,7 @@ const friends = [[1, 2], "tom"];
  *  @type {user}
  */
 const user = {
-  id: "e",
+  id: "e", // Type 'string' is not assignable to type 'number'.ts(2322)
   name: 'Vanesa',
   friends
 }
