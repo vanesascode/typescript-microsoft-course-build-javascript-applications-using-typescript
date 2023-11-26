@@ -106,7 +106,7 @@ randomValue.toUpperCase();      // Returns "randomValue is not a function" error
 
 Remember that all the convenience of any comes at the cost of `losing type safety`. Type safety is one of the main motivations for using TypeScript. You should avoid using any when it's not necessary.
 
-### 🔹 Unkonwn type
+### 🔹 Unknown type
 
 The core difference between any and unknown is you are unable to interact with a variable of type unknown; doing so generates a `compiler error`. any bypasses any compile-time checks, and the object is evaluated at runtime; if the method or property exists it will behave as expected.
 
