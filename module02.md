@@ -90,6 +90,60 @@ if (color === Color.Green) {
 }
 ```
 
+### 🔹 Symbol type:
+
+```
+const mySymbol: symbol = Symbol('mySymbol');
+
+function processSymbol(input: symbol): void {
+  // Process the symbol
+}
+
+processSymbol(mySymbol);
+```
+
+```
+const carBrandSymbol: symbol = Symbol('brand');
+const carColorSymbol: symbol = Symbol('color');
+
+const car: { [carBrandSymbol]: string; [carColorSymbol]: string } = {
+  [carBrandSymbol]: 'Toyota',
+  [carColorSymbol]: 'Blue'
+};
+
+console.log(car[carBrandSymbol]);  // Output: "Toyota"
+console.log(car[carColorSymbol]);  // Output: "Blue"
+
+console.log(Object.getOwnPropertySymbols(car));  // Output: [ Symbol(brand), Symbol(color) ]
+```
+
+In JavaScript, a symbol is a primitive data type introduced in ECMAScript 2015 (ES6). It is a unique and immutable value that can be used as an `identifier for object properties`.
+
+One practical example of using symbols in JavaScript is to define unique keys for object properties that are intended to be `private or internal` to a specific module or class. Symbols can help `prevent accidental naming conflicts` with properties defined by other code:
+
+```
+const _firstName = Symbol('firstName');
+const _lastName = Symbol('lastName');
+
+class Person {
+   private [_firstName]: string;
+  private [_lastName]: string;
+
+  constructor(firstName: string, lastName: string) {
+    this[_firstName] = firstName;
+    this[_lastName] = lastName;
+  }
+
+  getFullName(): string {
+    return `${this[_firstName]} ${this[_lastName]}`;
+  }
+}
+
+const person = new Person('John', 'Doe');
+console.log(person.getFullName());  // Output: "John Doe"
+console.log(person[_firstName]);    // Output: undefined (Although not in the Typescript Playground,because it's transpiling the TypeScript code into JavaScript before executing it )
+```
+
 ### 🔹 Any type
 
 Careful with 'any':
