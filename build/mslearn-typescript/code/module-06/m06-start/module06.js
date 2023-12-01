@@ -14,7 +14,7 @@ class DataStore {
             this._data[index] = item;
         }
         else {
-            alert('Index is greater than 10');
+            alert("Index is greater than 10");
         }
     }
     GetData(index) {
